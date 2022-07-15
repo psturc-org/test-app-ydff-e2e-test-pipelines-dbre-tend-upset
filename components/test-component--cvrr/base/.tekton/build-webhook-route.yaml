@@ -1,0 +1,22 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    build.appstudio.openshift.io/application: test-app-ydff
+    build.appstudio.openshift.io/build: "true"
+    build.appstudio.openshift.io/component: test-component--cvrr
+    build.appstudio.openshift.io/type: build
+    build.appstudio.openshift.io/version: "0.1"
+    pipelines.appstudio.openshift.io/type: build
+  creationTimestamp: null
+  name: eltest-component--cvrr
+  namespace: e2e-test-pipelines-dbre
+spec:
+  path: /
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: el-test-component--cvrr
+    weight: null
+status: {}
